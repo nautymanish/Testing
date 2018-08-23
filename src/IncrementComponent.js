@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types';
 
 class Increment extends React.Component {
     constructor(props) {
@@ -7,9 +7,10 @@ class Increment extends React.Component {
         this.handleClick= this.handleClick.bind(this);
         
     }
+
  handleClick = function()
  {
-     this.props.increment(parseInt(this.props.value));
+    this.props.increment(this.props.value);
  }
 
     render() {
@@ -22,4 +23,5 @@ class Increment extends React.Component {
     }
 
 }
+
 export default Increment

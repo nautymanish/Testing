@@ -26,7 +26,7 @@ class MainApp extends React.Component
             <div>
             <Header name='Manish' />
             <br/>
-            <Increment value='1' increment= {this.increment} />
+            <Increment value={ 1 } increment= {this.increment} />
             <Display value={this.state.value} name = 'Value Incremented' />
             <br/>
             <Footer year="2018" />
