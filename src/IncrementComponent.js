@@ -5,15 +5,17 @@ import store from './store/store'
 class Increment extends React.Component {
     constructor(props) {
         super(props);
-        this.handleClick= this.handleClick.bind(this);
-        
+        this.handleClick = this.handleClick.bind(this);
+
     }
 
- handleClick = function()
- {
-    this.props.increment(this.props.value);
-    store.dispatch({type:'TEST', data: this.props.value});
- }
+    handleClick = function () {
+        this.props.increment(this.props.value);
+        store.dispatch({ type: 'TEST', data: this.props.value });
+        store.dispatch(function (dispatch) { // this will give you error in console add redux-thunk
+            console.log('Inside thunk');
+        });
+    }
 
     render() {
         return (

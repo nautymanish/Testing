@@ -1,5 +1,6 @@
-import {createStore} from 'redux';
-debugger;
+import {applyMiddleware, createStore} from 'redux';
+import {createLogger} from 'redux-logger';
+
 var defaultState= {Name : 'Testing Redux'};
 var amount = (state=defaultState, action)=>
 {
@@ -10,7 +11,13 @@ var amount = (state=defaultState, action)=>
     return state;
 } 
 
-var store=createStore(amount);
+var logger = createLogger(
+    {
+        collapsed:true
+    }
+);
+var store=createStore(amount,
+applyMiddleware(logger));
 
 store.subscribe(
 function()
