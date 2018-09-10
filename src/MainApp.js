@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer'
 import Display from './DisplayComponent'
 import Increment from './IncrementComponent'
+import store from './store/store'
 
 class MainApp extends React.Component
 {
@@ -26,8 +27,8 @@ class MainApp extends React.Component
             <div>
             <Header name='Manish' />
             <br/>
-            <Increment value={ 1 } increment= {this.increment} />
-            <Display value={this.state.value} name = 'Value Incremented' />
+            <Increment value={ 1 } increment= {this.increment} storeValue = {store.getState().Name}/>
+            <Display value={this.state.value} name = 'Value Incremented' storeValue = {store.getState().Name}/>
             <br/>
             <Footer year="2018" />
             </div>

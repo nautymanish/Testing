@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
+import store from './store/store'
 
 class Increment extends React.Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class Increment extends React.Component {
  handleClick = function()
  {
     this.props.increment(this.props.value);
+    store.dispatch({type:'TEST', data: this.props.value});
  }
 
     render() {

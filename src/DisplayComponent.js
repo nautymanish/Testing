@@ -6,6 +6,7 @@ const Display = function (props)
             <span style={{color:'red'}} >
             {props.value}
             <marquee>{props.name}</marquee>
+            <h1>{props.storeValue}</h1>
 </span>
     );
 }
