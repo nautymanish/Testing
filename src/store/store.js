@@ -1,5 +1,6 @@
 import {applyMiddleware, createStore} from 'redux';
 import {createLogger} from 'redux-logger';
+import thunk from 'redux-thunk';
 
 var defaultState= {Name : 'Testing Redux'};
 var amount = (state=defaultState, action)=>
@@ -17,7 +18,7 @@ var logger = createLogger(
     }
 );
 var store=createStore(amount,
-applyMiddleware(logger));
+applyMiddleware(thunk, logger)); //logger should always be last module to add
 
 store.subscribe(
 function()

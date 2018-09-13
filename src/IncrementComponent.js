@@ -12,8 +12,10 @@ class Increment extends React.Component {
     handleClick = function () {
         this.props.increment(this.props.value);
         store.dispatch({ type: 'TEST', data: this.props.value });
-        store.dispatch(function (dispatch) { // this will give you error in console add redux-thunk
+        
+        store.dispatch(function (dispatch) { // this will give you error in console, add redux-thunk to solve this
             console.log('Inside thunk');
+            dispatch({ type: 'TEST', data: 'thunk' });
         });
     }
 
